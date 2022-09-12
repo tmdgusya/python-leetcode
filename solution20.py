@@ -21,25 +21,17 @@ class Solution(unittest.TestCase):
         return len(failed_stack) == 0
 
     def isCorrectWord(self, target: str, curr: str) -> bool:
-        if target == '(':
-            if curr == ')':
+        if target == '(' and curr == ')':
                 return True
-            else:
-                return False
-        if target == '{':
-            if curr == '}':
+        if target == '{' and curr == '}':
                 return True
-            else:
-                return False
-        if target == '[':
-            if curr == ']':
+        if target == '[' and curr == ']':
                 return True
-            else:
-                return False
         return False
 
 
-    def do(self):
+    #boilerplate code
+    def doTest(self):
         self.assertTrue(self.isValid('()'))
         self.assertFalse(self.isValid(')()('))
         self.assertFalse(self.isValid('({[)}]'))
